@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    color: white;
+    text-decoration: none;
+}
+
+html {box-sizing: border-box;} 
+ 
+*, *:before, *:after {box-sizing: inherit;}
+
+
+body{
+    background: black;
+    height: 1000px;
+}
+
+header{
+    background: black;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    /*border: 1px solid white;*/
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    /*border: 1px solid black;*/
+    width: 70%;
+}
+
+
+a{
+    padding: 0 20px;
+    /*transition: all 0.6s;*/
+}
+
+a:hover{
+    border-bottom: 1px solid rgb(29, 221, 188);
+}
+
+
+.logo:hover{
+    border-bottom: none;
+    color: rgb(29, 221, 188);
+}
+
+.contact{
+    display: inline-block;
+    border: 1px solid white;
+    padding: 0 20px;
+    transition: all 0.8s;
+}
+
+.contact:hover{
+    background: rgb(29, 221, 188);
+    border: none;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info, .skills, .projects, .education{
+    width: 96%;
+    margin-top: 60px;
+    margin: 100px auto;
+    padding: 50px 20px;
+    box-shadow: 0 5px 30px 0 rgb(29 221 188 / 25%);
+}
+
+.facebook, .linkedin, .youtube, .github{
+    border-radius: 3px;
+    transition: all 0.9s;
+}
+
+.facebook{background: rgb(65, 105, 225)}
+.linkedin{background: rgb(14, 139, 241)}
+.youtube{background: rgb(255, 0, 0)}
+.github{background: whitesmoke; color: black}
+
+.facebook:hover, .linkedin:hover, .youtube:hover, .github:hover{
+    border-bottom: 0 none;
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
+.left{
+    /*border: 7px solid white;*/
+    width: 40%;
+    text-align: center;
+}
+
+.img-contain{
+    text-align: center
+}
+
+img{
+    width: 220px;
+    height: 210px;
+    border-radius: 50%;
+    border-top: 2px solid white;
+    border-right: 2px solid rgb(29, 221, 188);
+}
+
+.right{
+    width: 60%;
+    padding-top: 67px;
+    text-align: center;
+}
+
+.left h1{
+    font-size: 20px;
+}
+
+header h3 .adel, .left h1 .adel{
+    color: rgb(29, 221, 188);
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid white;
+    background: black;
+}
+
+.my-link{
+    transition: all 0.8s;
+    padding: 0 10px;
+    border: 1px solid white;
+}
+
+.my-link:hover{
+    padding: 0 10px;
+    background: rgb(29, 221, 188);
+    border: none;
+}
+
+.skills h1, .projects h1{
+    text-align: center;
+    border-bottom: 2px solid rgb(29, 221, 188);
+    width: fit-content;
+    margin: 0 auto 15px;
+}
+.skills .nestead, .projects .nestead{
+    /*border: 1px solid red;*/
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.skills .nestead section, .projects .nestead section{
+    /*border: 1px solid blue;*/
+    margin: auto;
+}
+
+.more{
+    border: 1px solid white;
+    transition: all 0.8s;
+}
+
+.more:hover{
+    border: none;
+    background: rgb(29, 221, 188);
+    font-size: 18px;
+}
+
+.projects h3 a:hover{
+    border: none;
+    color: rgb(29, 221, 188);
+}
+
+@media only screen and (max-width: 320px) {
+    .info {
+        display: block;
+    }
