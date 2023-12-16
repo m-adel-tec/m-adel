@@ -187,33 +187,52 @@ footer{
         display: block;
     }*/
 
+/* تحسين التصميم للأجهزة المحمولة */
+
+/* عرض الروابط كقائمة عندما يكون عرض الشاشة أقل من 768 بكسل */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
+    /* تنظيم القائمة */
+    header ul {
+        padding: 0;
+        text-align: center;
     }
 
-    /* تعديل حجم الشعار أو العناوين */
-    .logo h3 {
-        font-size: 24px;
-    }
-
-    /* تعديل تخطيط العناصر في القائمة */
     header ul li {
         display: block;
         margin-bottom: 10px;
     }
 
-    /* تقليل حجم الصور في القسم الأول (معلومات شخصية) */
-    .info .left img {
-        max-width: 100px;
-    }
-
-    /* تغيير تخطيط قائمة المهارات */
-    .skills .nestead {
+    /* عرض السكاشن بشكل عمودي */
+    .info,
+    .skills,
+    .projects {
         display: block;
+        width: 100%;
     }
 
-    /* تعديل الألوان أو التصميم لتناسب الهواتف */
-    /* يمكنك تعديل هذه القيم حسب التصميم المطلوب */
-    /* على سبيل المثال: تغيير خلفية الصفحة أو ألوان النصوص */
+    .info,
+    .skills {
+        text-align: center;
+    }
+
+    /* ترتيب العناصر داخل السكاشن بشكل عمودي */
+    .info .left,
+    .info .right,
+    .skills .nestead,
+    .projects .nestead {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .info .left img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .skills .nestead section,
+    .projects .nestead section {
+        margin-bottom: 20px;
+    }
 }
