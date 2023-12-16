@@ -182,7 +182,38 @@ footer{
     color: rgb(29, 221, 188);
 }
 
-@media only screen and (max-width: 320px) {
+/*@media only screen and (max-width: 320px) {
     .info {
         display: block;
+    }*/
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
     }
+
+    /* تعديل حجم الشعار أو العناوين */
+    .logo h3 {
+        font-size: 24px;
+    }
+
+    /* تعديل تخطيط العناصر في القائمة */
+    header ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* تقليل حجم الصور في القسم الأول (معلومات شخصية) */
+    .info .left img {
+        max-width: 100px;
+    }
+
+    /* تغيير تخطيط قائمة المهارات */
+    .skills .nestead {
+        display: block;
+    }
+
+    /* تعديل الألوان أو التصميم لتناسب الهواتف */
+    /* يمكنك تعديل هذه القيم حسب التصميم المطلوب */
+    /* على سبيل المثال: تغيير خلفية الصفحة أو ألوان النصوص */
+}
