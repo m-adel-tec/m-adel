@@ -44,6 +44,13 @@
                 display: flex;
                 align-items: center;
             }
+
+            @media (max-widht: 1024px)
+            {
+                .aboutbio{
+                    display: none;
+                }
+            }
         </style>
     </head>
     
@@ -64,14 +71,14 @@
                 <section class="left">
                     <div class="img-contain">
                         <img src="me.jpg" title="Mohamed Adel's image" alt="Mohamed Adel's image">
-                </div>
+                    </div>
                     <h1>Mohamed <span class="adel">Adel</span></h1>
                     <h5>Software Engineer</h5>
                 </section>
                 
-                <section class="right">
+                <section class="right aboutbio">
                     <h1>About</h1>
-                    <b><p style="direction: rtl; letter-spacing: 2px;">لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ!</p></b>
+                    <p style="direction: rtl; letter-spacing: 2px;"><b>لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ!</b></p>
                     <br>
                     <a href="https://www.facebook.com/mohamed.adel5" target="_blank" class="facebook">Facebook</a>
                     <a href="https://www.linkedin.com/in/mohamed-adel-5360b3194/" target="_blank" class="linkedin">Linked in</a>
