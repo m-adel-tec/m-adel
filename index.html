@@ -1,209 +1,133 @@
-<!DOCTYPE html>
-<html>
-    <head>
-         <title>Mohamed Adel</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
-        <meta charset="utf-8">
-        <style>
-            body{
-                font-family: 'Cairo', sans-serif;
-            }
-            
-            .lnk-project:hover{
-                border-bottom: none;
-            }
-            
-            .projects h3:hover{
-                color: rgb(29, 221, 188);
-            }
-            
-            .lnk-project:hover{
-                text-decoration: none;
-            }
-            
-            ul li{
-                transition: 1s all;
-            }
-            
-            ul li:hover{
-                letter-spacing: 4px;
-            }
-            
-            .info img:hover{transform:rotate(0deg); cursor: default}
-            
-            img:hover{
-                transform:rotate(-360deg);
-                transition:1s all;
-                cursor: pointer;
-            }About
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mohamed Adel — Software Developer</title>
+  <meta name="description" content="Mohamed Adel — .NET Developer. ASP.NET Web Forms, SQL Server, Frontend & LMS integration.">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1>Mohamed Adel</h1>
+        <p class="sub">Software Developer — .NET / Web</p>
+      </div>
+      <nav class="nav">
+        <a href="#about">عنّي</a>
+        <a href="#skills">المهارات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>بناء تطبيقات ويب عملية قابلة للنشر والقياس</h2>
+          <p>مطور .NET متوسط المستوى متخصص في ASP.NET Web Forms، SQL Server، وواجهات الويب. مهتم بتقنيات التعليم ومنصات LMS.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#projects">مشاريعي</a>
+            <a class="btn ghost" href="Mohamed_Adel_CV.pdf" download>تحميل السيرة</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <ul class="contact-list">
+            <li><strong>الموقع</strong><span>6th October City, Giza, Egypt</span></li>
+            <li><strong>الهاتف</strong><span>01146040461</span></li>
+            <li><strong>الإيميل</strong><span><a href="mailto:m.adel.tec@outlook.com">m.adel.tec@outlook.com</a></span></li>
+            <li><strong>المعرض</strong><span><a href="https://m-adel-tec.github.io/m-adel" target="_blank">m-adel-tec.github.io</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-            header{
-                display: flex;
-                align-items: center;
-            }
+    <section id="about" class="container about">
+      <h3 class="section-title">عنّي</h3>
+      <p>مطور ويب بخبرة عملية في بناء أنظمة تسجيل وإدارة طلابية وتطبيقات تعليمية. حالياً أدرس دبلومة دراسات عليا في علوم الحاسب وأطور مشروع ويب لإدارة أنشطة طلابية. أقدّم حلولاً تعتمد قواعد بيانات منسقة وواجهات مستخدم واضحة مع اهتمام بجودة الكود وقابلية الصيانة.</p>
+    </section>
 
-            @media (max-widht: 1024px)
-            {
-                .aboutbio{
-                    display: none;
-                }
-            }
-        </style>
-    </head>
-    
-    <body>
-        <header>
-            <ul>
-                <li><a href="#bio">Bio</a></li>
-                <li><a href="#tskills">Technical</a></li>
-                <li><a href="#sskills">Soft</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-            
-            <a class="logo" href="index.html"><h3>Mohamed <span class="adel">Adel</span></h3></a>
-        </header>
-        
-        <main>
-            <div class="info" id="bio">
-                <section class="left">
-                    <div class="img-contain">
-                        <img src="me.jpg" title="Mohamed Adel's image" alt="Mohamed Adel's image">
-                    </div>
-                    <h1>Mohamed <span class="adel">Adel</span></h1>
-                    <h5>Software Developer</h5>
-                </section>
-                
-                <section class="right aboutbio">
-                    <!--<h1>About</h1>-->
-                    <!--<p style="direction: rtl; letter-spacing: 2px;"><b>لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ!</b></p>-->
-                    <br>
-                    <a href="https://www.facebook.com/mohamed.adel5" target="_blank" class="facebook">Facebook</a>
-                    <a href="https://www.linkedin.com/in/mohamed-adel-5360b3194/" target="_blank" class="linkedin">Linked in</a>
-                    <a href="https://github.com/m-adel97" target="_blank" class="github">GitHub</a>
-                    <a href="https://www.youtube.com/channel/UCND0ZeDejjaIEhY5-pFGKzg" target="_blank" class="youtube">Youtube</a>
-                </section>
-            </div>
-            
-            <div class="skills" id="tskills">
-                <h1>Technical Skills</h1>
-                <div class="nestead row1">
-                    <section>
-                        <img src="img/skills/software_engineering.jpg">
-                        <h3>Software Engineering</h3>
-                        <p></p>
-                    </section>
-                    
-                    <section>
-                        <img src="img/skills/ui.png">
-                        <h3>UI/Mobile Development</h3>
-                        <p>HTML/CSS/JavaScript/Bootstrap</p>
-                    </section>
+    <section id="skills" class="container skills">
+      <h3 class="section-title">المهارات التقنية</h3>
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>Back-end</h4>
+          <p>ASP.NET Web Forms, C#, ADO.NET, Entity Framework, LINQ</p>
+        </div>
+        <div class="skill">
+          <h4>Database</h4>
+          <p>SQL Server, Stored Procedures, Query Optimization</p>
+        </div>
+        <div class="skill">
+          <h4>Front-end</h4>
+          <p>HTML5, CSS3, JavaScript, Bootstrap, responsive UI</p>
+        </div>
+        <div class="skill">
+          <h4>Dev Tools</h4>
+          <p>Visual Studio, Git, GitHub, SSMS, Postman</p>
+        </div>
+        <div class="skill">
+          <h4>LMS & Systems</h4>
+          <p>Moodle, UMIS integration, educational workflows</p>
+        </div>
+        <div class="skill">
+          <h4>Other</h4>
+          <p>Excel data analysis, basic Python for scripts</p>
+        </div>
+      </div>
+    </section>
 
-                    <section>
-                        <img src="img/skills/Designing.png">
-                        <h3>Designing</h3>
-                        <p></p>
-                    </section>                    
-                </div>
-                
-                <div class="nestead row2">
-                    <section>
-                        <img src="img/skills/network.jpg">
-                        <h3>Network</h3>
-                        <p></p>
-                    </section>
-                </div>
-                
-                
-            </div>
-            
-            <div class="skills" id="sskills">
-                <h1>Soft Skills</h1>
-                <div class="nestead row1">
-                    <section>
-                        <img src="img/sskills/time.jpg">
-                        <h3>Time Management</h3>
-                        <p></p>
-                    </section>
+    <section id="projects" class="container projects">
+      <h3 class="section-title">مشاريع مختارة</h3>
 
-                    <section>
-                        <img src="img/sskills/self.png">
-                        <h3>Self Study</h3>
-                        <p></p>
-                    </section>
+      <article class="project">
+        <div class="project-content">
+          <h4>University Child Web System</h4>
+          <p>تطبيق ويب لإدارة الأنشطة الطلابية وحلقات التدريب. مبني بـ ASP.NET Web Forms وSQL Server. يشمل تسجيل دخول بصلاحيات متعددة، عمليات إضافة/تعديل/حذف بيانات، ولوحة تحكم للمشرفين.</p>
+          <p class="muted">النتيجة: تبسيط إجراءات التسجيل وتحسين التواصل بين الأقسام.</p>
+        </div>
+        <div class="project-meta">
+          <a class="btn small" href="#" onclick="openProject('uc')">عرض</a>
+        </div>
+      </article>
 
-                    <section>
-                        <img src="img/sskills/team.jpg">
-                        <h3>Team and leadership skills</h3>
-                        <p></p>
-                    </section>
-                </div>
-                
-                <div class="nestead row2">
-                    <section>
-                        <img src="img/sskills/relation.jpg">
-                        <h3>Public relations</h3>
-                        <p></p>
-                    </section>
+      <article class="project">
+        <div class="project-content">
+          <h4>Student Registration System</h4>
+          <p>نظام لتسجيل الطلاب، إدارة المقررات ونتائجهم؛ تم اعتماد Entity Framework وواجهات متجاوبة باستخدام Bootstrap.</p>
+          <p class="muted">النتيجة: تسريع معالجة البيانات واستخراج تقارير أداء أسرع.</p>
+        </div>
+        <div class="project-meta">
+          <a class="btn small" href="#" onclick="openProject('sr')">عرض</a>
+        </div>
+      </article>
 
-                    <section>
-                        <img src="img/sskills/creative.jpg">
-                        <h3>Accurate and creative</h3>
-                        <p></p>
-                    </section>
+    </section>
 
-                    <section>
-                        <img src="img/sskills/communication.jpg">
-                        <h3>Communication Skills</h3>
-                        <p></p>
-                    </section>
-                </div>
-            </div>
-            
-            <div class="projects" id="projects">
-                <h1>Projects</h1>
-                <div class="nestead row1">
-                    <section>
-                        <!--<a class="lnk-project" href="https://drive.google.com/file/d/14RTxXGuPX3AQAAVfKjRGCQFlgaHupxWC/view?usp=sharing" target="_blank"><img src="img/projects/graduation.jpg">-->
-                        <h3>Garduation Project</h3>
-                        <p>Graduation grade: Excellent</p></a>
-                    </section>
+    <section id="contact" class="container contact">
+      <h3 class="section-title">تواصل</h3>
+      <p>تواصل عبر الإيميل أو الهاتف. ارسل رسالة قصيرة وسأرد خلال يومَي عمل.</p>
+      <form id="contactForm" action="mailto:m.adel.tec@outlook.com" method="get" class="contact-form">
+        <input name="subject" placeholder="الموضوع" required>
+        <textarea name="body" rows="5" placeholder="رسالتك..." required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">أرسل رسالة</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-                    <section>
-                        <a class="lnk-project" href=""><img src="img/projects/customer.png">
-                        <h3>Customer management Order program</h3></a>
-                        <p></p>
-                    </section>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mohamed Adel — All rights reserved.</p>
+    </div>
+  </footer>
 
-                    <section>
-                        <a class="lnk-project" href="https://fiqh-al-salat-simple-preview.on.drv.tw/hosting/" target="_blank"><img src="img/projects/FIQH.png">
-                        <h3>FIQH Al SALAT</a></h3>
-                        <p></p>
-                    </section>
-                </div>
-                
-                <div class="nestead row2">
-                    <section>
-                        <a class="lnk-project" href="https://oxdbhz367tl2rffuvucmia.on.drv.tw/hosting/about.html" target="_blank"><img src="img/projects/dsquares.jpg">
-                        <h3>Dsquares site</h3></a>
-                        <p></p>
-                    </section>
-
-                    <section>
-                        <a class="lnk-project" href=""><img src="img/projects/books.png">
-                        <h3>Books Library</h3></a>
-                        <p></p>
-                    </section>
-                </div>
-            </div>
-        </main>
-        
-        <footer>
-            <p>Designed and developed by <a class="my-link" href="#" title="😃 أنا اللي عملت الموقع ده">Mohamed Adel</a> © 2023</p>
-        </footer>
-    </body>
+  <script src="script.js"></script>
+</body>
 </html>
