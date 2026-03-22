@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +27,40 @@
       padding: 2.5rem 2rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
+    /* language switcher */
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+      gap: 0.5rem;
+    }
+    .lang-btn {
+      background: #f0f0f3;
+      border: none;
+      font-family: 'Cairo', sans-serif;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: #1d1d1f;
+      transition: 0.2s;
+    }
+    .lang-btn.active {
+      background: #0066cc;
+      color: white;
+    }
     /* header */
     .profile {
       display: flex;
-      flex-direction: row; /* تغيير من column إلى row */
+      flex-direction: row;
       align-items: center;
-      text-align: right; /* محاذاة النص لليمين */
+      text-align: right;
       margin-bottom: 2rem;
-      gap: 1.5rem; /* مسافة بين الصورة والنصوص */
+      gap: 1.5rem;
     }
     .avatar-placeholder {
-      width: 120px; /* تكبير بسيط للصورة لتناسب الشكل الجديد */
+      width: 120px;
       height: 120px;
       background: linear-gradient(145deg, #0066cc, #0055aa);
       border-radius: 50%;
@@ -45,8 +68,8 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,102,204,0.2);
-      overflow: hidden; /* لضمان بقاء الصورة داخل الدائرة */
-      flex-shrink: 0; /* منع الصورة من الانكماش */
+      overflow: hidden;
+      flex-shrink: 0;
     }
     .avatar-placeholder img {
       width: 100%;
@@ -212,38 +235,40 @@
       font-weight: 600;
     }
 
-    /* تحسين الاستجابة للشاشات الصغيرة */
-/* تحسين الاستجابة للشاشات الصغيرة */
-@media (max-width: 600px) {
-  .profile {
-    flex-direction: column;
-    text-align: center;
-    align-items: center; /* بيخلي كل حاجة في نص الشاشة */
-  }
-  
-  .avatar-placeholder {
-    margin-bottom: 1rem;
-    margin-left: 0; /* تأكد إن مفيش هوامش جانبية بتزقها */
-    margin-right: 0;
-  }
-
-  /* ده السطر اللي هيخلي الأيقونات تتوسط في الموبايل */
-  .profile-info div {
-    justify-content: center !important;
-    margin-top: 1rem;
-  }
-}
+    /* responsive */
+    @media (max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .avatar-placeholder {
+        margin-bottom: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .profile-info div {
+        justify-content: center !important;
+        margin-top: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="container">
+  <!-- Language Switcher -->
+  <div class="lang-switch">
+    <button class="lang-btn" id="btn-ar">العربية</button>
+    <button class="lang-btn active" id="btn-en">English</button>
+  </div>
+
   <div class="profile">
     <div class="avatar-placeholder">
       <img src="me.png" alt="Mohamed Adel">
     </div>
     <div class="profile-info">
-      <h1>محمد عادل - Mohamed Adel</h1>
-      <div class="title">✨ Programmer, LMS Developer, Instructor ✨</div>
+      <h1 id="profile-name">Mohamed Adel - محمد عادل</h1>
+      <div class="title" id="profile-title">✨ Programmer, LMS Developer, Instructor ✨</div>
       <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1rem;">
         <a href="https://wa.me/201146040461" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
         <a href="https://wa.me/201062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
@@ -253,64 +278,64 @@
     </div>
   </div>
 
-  <div class="section-title">📚 مشروعات LMS</div>
+  <div class="section-title" id="section-lms">📚 LMS Projects</div>
   <div class="card">
     <div class="card-header">
       <i class="fas fa-calendar-alt"></i>
-      <h3>نظام إدارة بيانات جامعة الطفل</h3>
+      <h3 id="proj1-title">Child University Data Management System</h3>
     </div>
-    <p>نظام لإدارة بيانات الطلاب والمراحل بجامعة الطفل المُقدم من وزارة التعليم العالي وأكاديمية البحث العلمي.</p>
+    <p id="proj1-desc">A system to manage student data and stages for the Child University, provided by the Ministry of Higher Education and the Academy of Scientific Research.</p>
     <div class="project-links">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+      <a href="#"><i class="fab fa-github"></i> <span id="proj1-gh">GitHub</span></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> <span id="proj1-preview">Preview</span></a>
     </div>
   </div>
 
   <div class="card">
     <div class="card-header">
       <i class="fas fa-calendar-alt"></i>
-      <h3>نظام توزيع المراقبات</h3>
+      <h3 id="proj2-title">Supervision Distribution System</h3>
     </div>
-    <p>نظام أتمتة لتوزيع مهام المراقبة على أعضاء هيئة التدريس بناءً على الجداول والتوفر، مع واجهة بسيطة للإدارة.</p>
+    <p id="proj2-desc">An automation system to distribute supervision tasks among faculty members based on schedules and availability, with a simple management interface.</p>
     <div class="project-links">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+      <a href="#"><i class="fab fa-github"></i> <span id="proj2-gh">GitHub</span></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> <span id="proj2-preview">Preview</span></a>
     </div>
   </div>
 
-  <div class="section-title">⚡ مشروعات مساعدة للطلاب</div>
+  <div class="section-title" id="section-student">⚡ Student Helper Projects</div>
   <div class="card">
     <div class="card-header">
       <i class="fas fa-robot"></i>
-      <h3>شات بوت مساعد الطلاب</h3>
+      <h3 id="proj3-title">Student Assistant Chatbot</h3>
     </div>
-    <p>شات بوت ذكي للإجابة عن استفسارات الطلاب الشائعة، يتكامل مع أنظمة LMS الحالية ويوفر دعم فوري 24/7.</p>
+    <p id="proj3-desc">An intelligent chatbot to answer common student inquiries, integrates with existing LMS systems and provides 24/7 instant support.</p>
     <div class="project-links">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+      <a href="#"><i class="fab fa-github"></i> <span id="proj3-gh">GitHub</span></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> <span id="proj3-preview">Preview</span></a>
     </div>
   </div>
 
   <div class="card">
     <div class="card-header">
       <i class="fas fa-check-circle"></i>
-      <h3>تطبيق مساعدة طلاب (مهام / مواعيد)</h3>
+      <h3 id="proj4-title">Student Helper App (Tasks / Deadlines)</h3>
     </div>
-    <p>تطبيق ويب لإدارة المهام الدراسية ومواعيد التسليم، مع إشعارات وتكامل مع تقويم الجامعة.</p>
+    <p id="proj4-desc">A web application to manage academic tasks and deadlines, with notifications and university calendar integration.</p>
     <div class="project-links">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+      <a href="#"><i class="fab fa-github"></i> <span id="proj4-gh">GitHub</span></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> <span id="proj4-preview">Preview</span></a>
     </div>
   </div>
   <div class="card">
     <div class="card-header">
       <i class="fas fa-magic"></i>
-      <h3>أتمتة مهام التدريس</h3>
+      <h3 id="proj5-title">Teaching Tasks Automation</h3>
     </div>
-    <p>أتمتة تصحيح التمارين، إرسال النتائج، ومتابعة حضور الطلاب.</p>
+    <p id="proj5-desc">Automation of exercise grading, result delivery, and student attendance tracking.</p>
     <div class="project-links">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+      <a href="#"><i class="fab fa-github"></i> <span id="proj5-gh">GitHub</span></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> <span id="proj5-preview">Preview</span></a>
     </div>
   </div>
 
@@ -322,9 +347,116 @@
     <a href="https://wa.me/01062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-youtube"></i></a>
   </div>
 
-  <footer>
-    محمد عادل - Mohamed Adel
-  </footer>
+  <footer id="footer-text">Mohamed Adel - محمد عادل</footer>
 </div>
+
+<script>
+  (function() {
+    // Default language: English
+    let currentLang = 'en';
+
+    // All translatable content
+    const content = {
+      en: {
+        profileName: "Mohamed Adel - محمد عادل",
+        profileTitle: "✨ Programmer, LMS Developer, Instructor ✨",
+        sectionLMS: "📚 LMS Projects",
+        sectionStudent: "⚡ Student Helper Projects",
+        proj1Title: "Child University Data Management System",
+        proj1Desc: "A system to manage student data and stages for the Child University, provided by the Ministry of Higher Education and the Academy of Scientific Research.",
+        proj2Title: "Supervision Distribution System",
+        proj2Desc: "An automation system to distribute supervision tasks among faculty members based on schedules and availability, with a simple management interface.",
+        proj3Title: "Student Assistant Chatbot",
+        proj3Desc: "An intelligent chatbot to answer common student inquiries, integrates with existing LMS systems and provides 24/7 instant support.",
+        proj4Title: "Student Helper App (Tasks / Deadlines)",
+        proj4Desc: "A web application to manage academic tasks and deadlines, with notifications and university calendar integration.",
+        proj5Title: "Teaching Tasks Automation",
+        proj5Desc: "Automation of exercise grading, result delivery, and student attendance tracking.",
+        github: "GitHub",
+        preview: "Preview",
+        footer: "Mohamed Adel - محمد عادل"
+      },
+      ar: {
+        profileName: "محمد عادل - Mohamed Adel",
+        profileTitle: "✨ Programmer, LMS Developer, Instructor ✨",
+        sectionLMS: "📚 مشروعات LMS",
+        sectionStudent: "⚡ مشروعات مساعدة للطلاب",
+        proj1Title: "نظام إدارة بيانات جامعة الطفل",
+        proj1Desc: "نظام لإدارة بيانات الطلاب والمراحل بجامعة الطفل المُقدم من وزارة التعليم العالي وأكاديمية البحث العلمي.",
+        proj2Title: "نظام توزيع المراقبات",
+        proj2Desc: "نظام أتمتة لتوزيع مهام المراقبة على أعضاء هيئة التدريس بناءً على الجداول والتوفر، مع واجهة بسيطة للإدارة.",
+        proj3Title: "شات بوت مساعد الطلاب",
+        proj3Desc: "شات بوت ذكي للإجابة عن استفسارات الطلاب الشائعة، يتكامل مع أنظمة LMS الحالية ويوفر دعم فوري 24/7.",
+        proj4Title: "تطبيق مساعدة طلاب (مهام / مواعيد)",
+        proj4Desc: "تطبيق ويب لإدارة المهام الدراسية ومواعيد التسليم، مع إشعارات وتكامل مع تقويم الجامعة.",
+        proj5Title: "أتمتة مهام التدريس",
+        proj5Desc: "أتمتة تصحيح التمارين، إرسال النتائج، ومتابعة حضور الطلاب.",
+        github: "GitHub",
+        preview: "معاينة",
+        footer: "محمد عادل - Mohamed Adel"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      // Update text content
+      document.getElementById('profile-name').innerText = content[lang].profileName;
+      document.getElementById('profile-title').innerText = content[lang].profileTitle;
+      document.getElementById('section-lms').innerHTML = content[lang].sectionLMS;
+      document.getElementById('section-student').innerHTML = content[lang].sectionStudent;
+      document.getElementById('proj1-title').innerText = content[lang].proj1Title;
+      document.getElementById('proj1-desc').innerText = content[lang].proj1Desc;
+      document.getElementById('proj2-title').innerText = content[lang].proj2Title;
+      document.getElementById('proj2-desc').innerText = content[lang].proj2Desc;
+      document.getElementById('proj3-title').innerText = content[lang].proj3Title;
+      document.getElementById('proj3-desc').innerText = content[lang].proj3Desc;
+      document.getElementById('proj4-title').innerText = content[lang].proj4Title;
+      document.getElementById('proj4-desc').innerText = content[lang].proj4Desc;
+      document.getElementById('proj5-title').innerText = content[lang].proj5Title;
+      document.getElementById('proj5-desc').innerText = content[lang].proj5Desc;
+      
+      // Update link texts (GitHub & Preview)
+      document.getElementById('proj1-gh').innerText = content[lang].github;
+      document.getElementById('proj1-preview').innerText = content[lang].preview;
+      document.getElementById('proj2-gh').innerText = content[lang].github;
+      document.getElementById('proj2-preview').innerText = content[lang].preview;
+      document.getElementById('proj3-gh').innerText = content[lang].github;
+      document.getElementById('proj3-preview').innerText = content[lang].preview;
+      document.getElementById('proj4-gh').innerText = content[lang].github;
+      document.getElementById('proj4-preview').innerText = content[lang].preview;
+      document.getElementById('proj5-gh').innerText = content[lang].github;
+      document.getElementById('proj5-preview').innerText = content[lang].preview;
+      
+      document.getElementById('footer-text').innerText = content[lang].footer;
+      
+      // Update direction and active button
+      const htmlEl = document.documentElement;
+      if (lang === 'ar') {
+        htmlEl.setAttribute('dir', 'rtl');
+        htmlEl.setAttribute('lang', 'ar');
+        document.getElementById('btn-ar').classList.add('active');
+        document.getElementById('btn-en').classList.remove('active');
+      } else {
+        htmlEl.setAttribute('dir', 'ltr');
+        htmlEl.setAttribute('lang', 'en');
+        document.getElementById('btn-en').classList.add('active');
+        document.getElementById('btn-ar').classList.remove('active');
+      }
+      localStorage.setItem('preferredLang', lang);
+    }
+
+    // Check for saved preference
+    const savedLang = localStorage.getItem('preferredLang');
+    if (savedLang === 'ar') {
+      setLanguage('ar');
+    } else {
+      setLanguage('en'); // default english
+    }
+
+    // Event listeners
+    document.getElementById('btn-ar').addEventListener('click', () => setLanguage('ar'));
+    document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
+  })();
+</script>
 </body>
 </html>
