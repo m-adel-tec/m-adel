@@ -1,132 +1,335 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mohamed Adel — Software Developer</title>
-  <meta name="description" content="Mohamed Adel — .NET Developer. ASP.NET Web Forms, SQL Server, Frontend & LMS integration.">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Adel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    /* header */
+    .profile {
+      display: flex;
+      flex-direction: row; /* تغيير من column إلى row */
+      align-items: center;
+      text-align: right; /* محاذاة النص لليمين */
+      margin-bottom: 2rem;
+      gap: 1.5rem; /* مسافة بين الصورة والنصوص */
+    }
+    .avatar-placeholder {
+      width: 120px; /* تكبير بسيط للصورة لتناسب الشكل الجديد */
+      height: 120px;
+      background: linear-gradient(145deg, #0066cc, #0055aa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,102,204,0.2);
+      overflow: hidden; /* لضمان بقاء الصورة داخل الدائرة */
+      flex-shrink: 0; /* منع الصورة من الانكماش */
+    }
+    .avatar-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 29% center;
+    }
+    .avatar-placeholder i {
+      font-size: 3.5rem;
+      color: white;
+    }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .profile h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #1d1d1f;
+    }
+    .profile .title {
+      font-size: 1.1rem;
+      color: #6e6e73;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .profile .tagline {
+      font-size: 1.1rem;
+      background: #f0f7ff;
+      color: #0066cc;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    /* social / action row */
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+      padding: 1rem 0;
+      border-top: 1px solid #eaeaea;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+    .action-item i {
+      font-size: 1.1rem;
+      color: #0066cc;
+    }
+    .action-item span {
+      color: #1d1d1f;
+      font-weight: 500;
+    }
+    .action-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .action-item:hover {
+      background: #f5f5f7;
+      transform: translateY(-2px);
+    }
+    /* cards for projects/sections */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 2rem 0 1.2rem 0;
+      border-right: 6px solid #0066cc;
+      padding-right: 1rem;
+    }
+    .card {
+      background: #fafafc;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #f0f0f3;
+      transition: all 0.2s;
+    }
+    .card:hover {
+      background: white;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+      border-color: #0066cc20;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.8rem;
+    }
+    .card-header i {
+      font-size: 1.8rem;
+      color: #0066cc;
+      background: #e8f1fe;
+      padding: 10px;
+      border-radius: 18px;
+    }
+    .card-header h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .card p {
+      color: #3a3a3c;
+      margin-bottom: 0.8rem;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      background: #eaeef5;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    .project-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .project-links a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid transparent;
+    }
+    .project-links a:hover {
+      border-bottom-color: #0066cc;
+    }
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      color: #8e8e93;
+      font-size: 0.9rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #eaeaea;
+      margin: 1.5rem 0;
+    }
+    .highlight {
+      color: #0066cc;
+      font-weight: 600;
+    }
+
+    /* تحسين الاستجابة للشاشات الصغيرة */
+/* تحسين الاستجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* بيخلي كل حاجة في نص الشاشة */
+  }
+  
+  .avatar-placeholder {
+    margin-bottom: 1rem;
+    margin-left: 0; /* تأكد إن مفيش هوامش جانبية بتزقها */
+    margin-right: 0;
+  }
+
+  /* ده السطر اللي هيخلي الأيقونات تتوسط في الموبايل */
+  .profile-info div {
+    justify-content: center !important;
+    margin-top: 1rem;
+  }
+}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <div class="brand">
-        <h1>Mohamed Adel</h1>
-        <p class="sub">Software Developer — .NET / Web</p>
-      </div>
-      <nav class="nav">
-        <a href="#about">عنّي</a>
-        <a href="#skills">المهارات</a>
-        <a href="#projects">المشاريع</a>
-        <a href="#contact">تواصل</a>
-      </nav>
+<div class="container">
+  <div class="profile">
+    <div class="avatar-placeholder">
+      <img src="me.png" alt="Mohamed Adel">
     </div>
-  </header>
-
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h2>بناء تطبيقات ويب عملية قابلة للنشر والقياس</h2>
-          <p>مطور .NET متوسط المستوى متخصص في ASP.NET Web Forms، SQL Server، وواجهات الويب. مهتم بتقنيات التعليم ومنصات LMS.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#projects">مشاريعي</a>
-            <a class="btn ghost" href="Mohamed_Adel_CV.pdf" download>تحميل السيرة</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <ul class="contact-list">
-            <li><strong>الهاتف</strong><span>01146040461</span></li>
-            <li><strong>الإيميل</strong><span><a href="mailto:m.adel.tec@outlook.com">m.adel.tec@outlook.com</a></span></li>
-          </ul>
-        </div>
+    <div class="profile-info">
+      <h1>محمد عادل - Mohamed Adel</h1>
+      <div class="title">✨ Programmer, LMS Developer, Instructor</div>
+      <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1rem;">
+        <a href="https://wa.me/01146040461" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/01062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" target="_blank" style="color:#1d1d1f;"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/01062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-youtube"></i></a>
       </div>
-    </section>
-
-    <section id="about" class="container about">
-      <h3 class="section-title">عنّي</h3>
-      <p>مطور ويب بخبرة عملية في بناء أنظمة تسجيل وإدارة طلابية وتطبيقات تعليمية. حالياً أدرس دبلومة دراسات عليا في علوم الحاسب وأطور مشروع ويب لإدارة أنشطة طلابية. أقدّم حلولاً تعتمد قواعد بيانات منسقة وواجهات مستخدم واضحة مع اهتمام بجودة الكود وقابلية الصيانة.</p>
-    </section>
-
-    <section id="skills" class="container skills">
-      <h3 class="section-title">المهارات التقنية</h3>
-      <div class="skills-grid">
-        <div class="skill">
-          <h4>Back-end</h4>
-          <p>ASP.NET Web Forms, C#, ADO.NET, Entity Framework, LINQ</p>
-        </div>
-        <div class="skill">
-          <h4>Database</h4>
-          <p>SQL Server, Stored Procedures, Query Optimization</p>
-        </div>
-        <div class="skill">
-          <h4>Front-end</h4>
-          <p>HTML5, CSS3, JavaScript, Bootstrap, responsive UI</p>
-        </div>
-        <div class="skill">
-          <h4>Dev Tools</h4>
-          <p>Visual Studio, Git, GitHub, SSMS, Postman</p>
-        </div>
-        <div class="skill">
-          <h4>LMS & Systems</h4>
-          <p>Moodle, UMIS integration, educational workflows</p>
-        </div>
-        <div class="skill">
-          <h4>Other</h4>
-          <p>Excel data analysis, basic Python for scripts</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="container projects">
-      <h3 class="section-title">مشاريع مختارة</h3>
-
-      <article class="project">
-        <div class="project-content">
-          <h4>University Child Web System</h4>
-          <p>تطبيق ويب لإدارة الأنشطة الطلابية وحلقات التدريب. مبني بـ ASP.NET Web Forms وSQL Server. يشمل تسجيل دخول بصلاحيات متعددة، عمليات إضافة/تعديل/حذف بيانات، ولوحة تحكم للمشرفين.</p>
-          <p class="muted">النتيجة: تبسيط إجراءات التسجيل وتحسين التواصل بين الأقسام.</p>
-        </div>
-        <div class="project-meta">
-          <a class="btn small" href="#" onclick="openProject('uc')">عرض</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-content">
-          <h4>Student Registration System</h4>
-          <p>نظام لتسجيل الطلاب، إدارة المقررات ونتائجهم؛ تم اعتماد Entity Framework وواجهات متجاوبة باستخدام Bootstrap.</p>
-          <p class="muted">النتيجة: تسريع معالجة البيانات واستخراج تقارير أداء أسرع.</p>
-        </div>
-        <div class="project-meta">
-          <a class="btn small" href="#" onclick="openProject('sr')">عرض</a>
-        </div>
-      </article>
-
-    </section>
-
-    <section id="contact" class="container contact">
-      <h3 class="section-title">تواصل</h3>
-      <p>تواصل عبر الإيميل أو الهاتف. ارسل رسالة قصيرة وسأرد خلال يومَي عمل.</p>
-      <form id="contactForm" action="mailto:m.adel.tec@outlook.com" method="get" class="contact-form">
-        <input name="subject" placeholder="الموضوع" required>
-        <textarea name="body" rows="5" placeholder="رسالتك..." required></textarea>
-        <div class="form-actions">
-          <button type="submit" class="btn primary">أرسل رسالة</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Mohamed Adel — All rights reserved.</p>
     </div>
+  </div>
+
+  <div class="section-title">👨‍💻 عني</div>
+  <div class="card" style="background: white;">
+    <p>مبرمج وباحث ماجستير في علوم الحاسب، شغوف بتطوير أنظمة الإتصالات ونظم إدارة التعلم <span class="highlight">(LMS)</span> وتوظيف التقنيات لخدمة المجال. أحضر رسالة الماجستير في تطوير الإتصالات في مجال أنظمة التعليم الذكية.</p>
+  </div>
+
+  <div class="section-title">📚 مشروعات LMS</div>
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>نظام إدارة بيانات جامعة الطفل</h3>
+    </div>
+    <p>نظام لإدارة بيانات الطلاب والمراحل بجامعة الطفل المُقدم من وزارة التعليم العالي وأكاديمية البحث العلمي.</p>
+    <div class="project-links">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>نظام توزيع المراقبات</h3>
+    </div>
+    <p>نظام أتمتة لتوزيع مهام المراقبة على أعضاء هيئة التدريس بناءً على الجداول والتوفر، مع واجهة بسيطة للإدارة.</p>
+    <div class="project-links">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+    </div>
+  </div>
+
+  <div class="section-title">⚡ مشروعات مساعدة للطلاب</div>
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-robot"></i>
+      <h3>شات بوت مساعد الطلاب</h3>
+    </div>
+    <p>شات بوت ذكي للإجابة عن استفسارات الطلاب الشائعة، يتكامل مع أنظمة LMS الحالية ويوفر دعم فوري 24/7.</p>
+    <div class="project-links">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-check-circle"></i>
+      <h3>تطبيق مساعدة طلاب (مهام / مواعيد)</h3>
+    </div>
+    <p>تطبيق ويب لإدارة المهام الدراسية ومواعيد التسليم، مع إشعارات وتكامل مع تقويم الجامعة.</p>
+    <div class="project-links">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-magic"></i>
+      <h3>أتمتة مهام التدريس</h3>
+    </div>
+    <p>أتمتة تصحيح التمارين، إرسال النتائج، ومتابعة حضور الطلاب.</p>
+    <div class="project-links">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fas fa-external-link-alt"></i> معاينة</a>
+    </div>
+  </div>
+
+  <hr>
+  <div style="display: flex; gap: 2rem; justify-content: center; font-size: 1.8rem; margin: 2rem 0 1rem;">
+    <a href="https://wa.me/01146040461" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/01062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" target="_blank" style="color:#1d1d1f;"><i class="fab fa-github"></i></a>
+    <a href="https://wa.me/01062887104" target="_blank" style="color:#1d1d1f;"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <footer>
+    محمد عادل - Mohamed Adel
   </footer>
-
-  <script src="script.js"></script>
+</div>
 </body>
 </html>
-
